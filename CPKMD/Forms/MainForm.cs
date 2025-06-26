@@ -166,5 +166,10 @@ namespace CPKMD
                 MessageBox.Show("Выберите программу для редактирования.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

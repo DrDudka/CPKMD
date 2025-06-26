@@ -33,7 +33,6 @@
             comboBoxTrainingForm = new ComboBox();
             textBoxSearch = new TextBox();
             buttonAdd = new Button();
-            buttonEdit = new Button();
             buttonDelete = new Button();
             buttonRefresh = new Button();
             labelTrainingForm = new Label();
@@ -47,21 +46,23 @@
             dataGridViewPrograms.AllowUserToDeleteRows = false;
             dataGridViewPrograms.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewPrograms.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewPrograms.BackgroundColor = Color.DarkTurquoise;
             dataGridViewPrograms.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewPrograms.Location = new Point(12, 84);
             dataGridViewPrograms.Name = "dataGridViewPrograms";
             dataGridViewPrograms.ReadOnly = true;
+            dataGridViewPrograms.RowTemplate.DefaultCellStyle.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.World, 204);
             dataGridViewPrograms.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewPrograms.Size = new Size(1011, 340);
             dataGridViewPrograms.TabIndex = 0;
-            dataGridViewPrograms.CellDoubleClick += this.dataGridViewPrograms_CellDoubleClick;
+            dataGridViewPrograms.CellDoubleClick += dataGridViewPrograms_CellDoubleClick;
             // 
             // comboBoxTrainingForm
             // 
             comboBoxTrainingForm.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxTrainingForm.Font = new Font("Segoe UI", 14.25F);
             comboBoxTrainingForm.FormattingEnabled = true;
-            comboBoxTrainingForm.Location = new Point(182, 45);
+            comboBoxTrainingForm.Location = new Point(182, 40);
             comboBoxTrainingForm.Name = "comboBoxTrainingForm";
             comboBoxTrainingForm.Size = new Size(180, 33);
             comboBoxTrainingForm.TabIndex = 1;
@@ -70,7 +71,7 @@
             // textBoxSearch
             // 
             textBoxSearch.Font = new Font("Segoe UI", 14.25F);
-            textBoxSearch.Location = new Point(640, 41);
+            textBoxSearch.Location = new Point(625, 40);
             textBoxSearch.Name = "textBoxSearch";
             textBoxSearch.Size = new Size(250, 33);
             textBoxSearch.TabIndex = 2;
@@ -78,46 +79,38 @@
             // 
             // buttonAdd
             // 
+            buttonAdd.BackColor = Color.DarkTurquoise;
             buttonAdd.Font = new Font("Segoe UI", 14.25F);
             buttonAdd.Location = new Point(12, 430);
             buttonAdd.Name = "buttonAdd";
-            buttonAdd.Size = new Size(123, 39);
+            buttonAdd.Size = new Size(130, 41);
             buttonAdd.TabIndex = 3;
             buttonAdd.Text = "Добавить";
-            buttonAdd.UseVisualStyleBackColor = true;
+            buttonAdd.UseVisualStyleBackColor = false;
             buttonAdd.Click += buttonAdd_Click;
-            // 
-            // buttonEdit
-            // 
-            buttonEdit.Font = new Font("Segoe UI", 14.25F);
-            buttonEdit.Location = new Point(141, 430);
-            buttonEdit.Name = "buttonEdit";
-            buttonEdit.Size = new Size(154, 39);
-            buttonEdit.TabIndex = 4;
-            buttonEdit.Text = "Редактировать";
-            buttonEdit.UseVisualStyleBackColor = true;
-            buttonEdit.Click += buttonEdit_Click;
             // 
             // buttonDelete
             // 
+            buttonDelete.BackColor = Color.Tomato;
             buttonDelete.Font = new Font("Segoe UI", 14.25F);
-            buttonDelete.Location = new Point(301, 430);
+            buttonDelete.Location = new Point(148, 430);
             buttonDelete.Name = "buttonDelete";
-            buttonDelete.Size = new Size(123, 39);
+            buttonDelete.Size = new Size(137, 41);
             buttonDelete.TabIndex = 5;
             buttonDelete.Text = "Удалить";
-            buttonDelete.UseVisualStyleBackColor = true;
+            buttonDelete.UseVisualStyleBackColor = false;
             buttonDelete.Click += buttonDelete_Click;
             // 
             // buttonRefresh
             // 
+            buttonRefresh.BackColor = Color.DarkTurquoise;
             buttonRefresh.Font = new Font("Segoe UI", 14.25F);
-            buttonRefresh.Location = new Point(896, 41);
+            buttonRefresh.Location = new Point(896, 39);
             buttonRefresh.Name = "buttonRefresh";
-            buttonRefresh.Size = new Size(127, 33);
+            buttonRefresh.Size = new Size(127, 37);
             buttonRefresh.TabIndex = 6;
             buttonRefresh.Text = "Обновить";
-            buttonRefresh.UseVisualStyleBackColor = true;
+            buttonRefresh.UseVisualStyleBackColor = false;
             buttonRefresh.Click += buttonRefresh_Click;
             // 
             // labelTrainingForm
@@ -149,7 +142,6 @@
             Controls.Add(labelTrainingForm);
             Controls.Add(buttonRefresh);
             Controls.Add(buttonDelete);
-            Controls.Add(buttonEdit);
             Controls.Add(buttonAdd);
             Controls.Add(textBoxSearch);
             Controls.Add(comboBoxTrainingForm);
@@ -159,6 +151,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Управление образовательными услугами";
             WindowState = FormWindowState.Maximized;
+            FormClosed += MainForm_FormClosed;
             Load += MainForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewPrograms).EndInit();
             ResumeLayout(false);
@@ -171,7 +164,6 @@
         private System.Windows.Forms.ComboBox comboBoxTrainingForm;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Label labelTrainingForm;

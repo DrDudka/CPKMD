@@ -103,6 +103,11 @@ namespace CPKMD.Forms
             DialogResult = DialogResult.Cancel;
             Close();
         }
+
+        private void EditForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 

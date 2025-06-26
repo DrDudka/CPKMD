@@ -48,116 +48,131 @@
             // labelProgramNumber
             // 
             labelProgramNumber.AutoSize = true;
-            labelProgramNumber.Location = new Point(12, 20);
+            labelProgramNumber.Font = new Font("Segoe UI", 14.25F);
+            labelProgramNumber.Location = new Point(12, 32);
             labelProgramNumber.Name = "labelProgramNumber";
-            labelProgramNumber.Size = new Size(117, 15);
+            labelProgramNumber.Size = new Size(179, 25);
             labelProgramNumber.TabIndex = 0;
             labelProgramNumber.Text = "Номер программы:";
             // 
             // textBoxProgramNumber
             // 
-            textBoxProgramNumber.Location = new Point(148, 19);
+            textBoxProgramNumber.Font = new Font("Segoe UI", 12F);
+            textBoxProgramNumber.Location = new Point(222, 28);
             textBoxProgramNumber.Name = "textBoxProgramNumber";
-            textBoxProgramNumber.Size = new Size(150, 23);
+            textBoxProgramNumber.Size = new Size(150, 29);
             textBoxProgramNumber.TabIndex = 1;
             // 
             // labelProgramName
             // 
             labelProgramName.AutoSize = true;
-            labelProgramName.Location = new Point(12, 50);
+            labelProgramName.Font = new Font("Segoe UI", 14.25F);
+            labelProgramName.Location = new Point(12, 67);
             labelProgramName.Name = "labelProgramName";
-            labelProgramName.Size = new Size(131, 15);
+            labelProgramName.Size = new Size(204, 25);
             labelProgramName.TabIndex = 2;
             labelProgramName.Text = "Название программы:";
             // 
             // comboBoxProgramName
             // 
+            comboBoxProgramName.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxProgramName.Font = new Font("Segoe UI", 12F);
             comboBoxProgramName.FormattingEnabled = true;
-            comboBoxProgramName.Location = new Point(148, 48);
+            comboBoxProgramName.Location = new Point(222, 63);
             comboBoxProgramName.Name = "comboBoxProgramName";
-            comboBoxProgramName.Size = new Size(150, 23);
+            comboBoxProgramName.Size = new Size(786, 29);
             comboBoxProgramName.TabIndex = 3;
             // 
             // labelTrainingForm
             // 
             labelTrainingForm.AutoSize = true;
-            labelTrainingForm.Location = new Point(12, 80);
+            labelTrainingForm.Font = new Font("Segoe UI", 14.25F);
+            labelTrainingForm.Location = new Point(12, 104);
             labelTrainingForm.Name = "labelTrainingForm";
-            labelTrainingForm.Size = new Size(104, 15);
+            labelTrainingForm.Size = new Size(164, 25);
             labelTrainingForm.TabIndex = 4;
             labelTrainingForm.Text = "Форма обучения:";
             // 
             // comboBoxTrainingForm
             // 
+            comboBoxTrainingForm.Font = new Font("Segoe UI", 12F);
             comboBoxTrainingForm.FormattingEnabled = true;
-            comboBoxTrainingForm.Location = new Point(148, 77);
+            comboBoxTrainingForm.Location = new Point(222, 100);
             comboBoxTrainingForm.Name = "comboBoxTrainingForm";
-            comboBoxTrainingForm.Size = new Size(150, 23);
+            comboBoxTrainingForm.Size = new Size(150, 29);
             comboBoxTrainingForm.TabIndex = 5;
             // 
             // labelHours
             // 
             labelHours.AutoSize = true;
-            labelHours.Location = new Point(12, 110);
+            labelHours.Font = new Font("Segoe UI", 14.25F);
+            labelHours.Location = new Point(12, 142);
             labelHours.Name = "labelHours";
-            labelHours.Size = new Size(39, 15);
+            labelHours.Size = new Size(61, 25);
             labelHours.TabIndex = 6;
             labelHours.Text = "Часы:";
             // 
             // numericUpDownHours
             // 
-            numericUpDownHours.Location = new Point(148, 106);
+            numericUpDownHours.Font = new Font("Segoe UI", 12F);
+            numericUpDownHours.Location = new Point(222, 138);
             numericUpDownHours.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
             numericUpDownHours.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numericUpDownHours.Name = "numericUpDownHours";
-            numericUpDownHours.Size = new Size(150, 23);
+            numericUpDownHours.Size = new Size(150, 29);
             numericUpDownHours.TabIndex = 7;
             numericUpDownHours.Value = new decimal(new int[] { 36, 0, 0, 0 });
             // 
             // labelCost
             // 
             labelCost.AutoSize = true;
-            labelCost.Location = new Point(12, 140);
+            labelCost.Font = new Font("Segoe UI", 14.25F);
+            labelCost.Location = new Point(12, 178);
             labelCost.Name = "labelCost";
-            labelCost.Size = new Size(70, 15);
+            labelCost.Size = new Size(109, 25);
             labelCost.TabIndex = 8;
             labelCost.Text = "Стоимость:";
             // 
             // numericUpDownCost
             // 
-            numericUpDownCost.Location = new Point(148, 136);
+            numericUpDownCost.Font = new Font("Segoe UI", 12F);
+            numericUpDownCost.Location = new Point(222, 174);
             numericUpDownCost.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
             numericUpDownCost.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numericUpDownCost.Name = "numericUpDownCost";
-            numericUpDownCost.Size = new Size(150, 23);
+            numericUpDownCost.Size = new Size(150, 29);
             numericUpDownCost.TabIndex = 9;
             numericUpDownCost.Value = new decimal(new int[] { 1000, 0, 0, 0 });
             // 
             // buttonSave
             // 
-            buttonSave.Location = new Point(148, 169);
+            buttonSave.BackColor = Color.DarkTurquoise;
+            buttonSave.Font = new Font("Segoe UI", 14.25F);
+            buttonSave.Location = new Point(858, 209);
             buttonSave.Name = "buttonSave";
-            buttonSave.Size = new Size(75, 30);
+            buttonSave.Size = new Size(150, 44);
             buttonSave.TabIndex = 10;
             buttonSave.Text = "Сохранить";
-            buttonSave.UseVisualStyleBackColor = true;
+            buttonSave.UseVisualStyleBackColor = false;
             buttonSave.Click += buttonSave_Click;
             // 
             // buttonCancel
             // 
-            buttonCancel.Location = new Point(229, 169);
+            buttonCancel.BackColor = Color.Tomato;
+            buttonCancel.Font = new Font("Segoe UI", 14.25F);
+            buttonCancel.Location = new Point(858, 259);
             buttonCancel.Name = "buttonCancel";
-            buttonCancel.Size = new Size(69, 30);
+            buttonCancel.Size = new Size(150, 44);
             buttonCancel.TabIndex = 11;
             buttonCancel.Text = "Отмена";
-            buttonCancel.UseVisualStyleBackColor = true;
+            buttonCancel.UseVisualStyleBackColor = false;
             buttonCancel.Click += buttonCancel_Click;
             // 
             // EditForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(332, 220);
+            ClientSize = new Size(1020, 315);
             Controls.Add(buttonCancel);
             Controls.Add(buttonSave);
             Controls.Add(numericUpDownCost);
@@ -177,6 +192,7 @@
             Name = "EditForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Программа";
+            FormClosed += EditForm_FormClosed;
             Load += ProgramForm_Load;
             ((System.ComponentModel.ISupportInitialize)numericUpDownHours).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownCost).EndInit();
