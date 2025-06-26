@@ -95,31 +95,6 @@ namespace CPKMD
             }
         }
 
-        private void buttonEdit_Click(object sender, EventArgs e)
-        {
-            if (dataGridViewPrograms.SelectedRows.Count > 0)
-            {
-                int id = (int)dataGridViewPrograms.SelectedRows[0].Cells["Id"].Value;
-                var program = _context.EducationalPrograms
-                    .Include(ep => ep.ProgramName)
-                    .Include(ep => ep.TrainingForm)
-                    .FirstOrDefault(ep => ep.Id == id);
-                if (program != null)
-                {
-                    using var form = Program.ServiceProvider.GetService<EditForm>();
-                    form.LoadProgram(program);
-                    if (form.ShowDialog() == DialogResult.OK)
-                    {
-                        LoadPrograms();
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Выберите программу для редактирования.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             if (dataGridViewPrograms.SelectedRows.Count > 0)
