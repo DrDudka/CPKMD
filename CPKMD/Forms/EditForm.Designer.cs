@@ -41,6 +41,7 @@
             numericUpDownCost = new NumericUpDown();
             buttonSave = new Button();
             buttonCancel = new Button();
+            buttonAdd = new Button();
             ((System.ComponentModel.ISupportInitialize)numericUpDownHours).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownCost).BeginInit();
             SuspendLayout();
@@ -148,7 +149,7 @@
             // 
             buttonSave.BackColor = Color.DarkTurquoise;
             buttonSave.Font = new Font("Segoe UI", 14.25F);
-            buttonSave.Location = new Point(858, 209);
+            buttonSave.Location = new Point(899, 209);
             buttonSave.Name = "buttonSave";
             buttonSave.Size = new Size(150, 44);
             buttonSave.TabIndex = 10;
@@ -160,7 +161,7 @@
             // 
             buttonCancel.BackColor = Color.Tomato;
             buttonCancel.Font = new Font("Segoe UI", 14.25F);
-            buttonCancel.Location = new Point(858, 259);
+            buttonCancel.Location = new Point(899, 259);
             buttonCancel.Name = "buttonCancel";
             buttonCancel.Size = new Size(150, 44);
             buttonCancel.TabIndex = 11;
@@ -168,11 +169,25 @@
             buttonCancel.UseVisualStyleBackColor = false;
             buttonCancel.Click += buttonCancel_Click;
             // 
+            // buttonAdd
+            // 
+            buttonAdd.BackColor = Color.DarkTurquoise;
+            buttonAdd.FlatStyle = FlatStyle.Popup;
+            buttonAdd.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            buttonAdd.Location = new Point(1014, 63);
+            buttonAdd.Name = "buttonAdd";
+            buttonAdd.Size = new Size(35, 29);
+            buttonAdd.TabIndex = 12;
+            buttonAdd.Text = "+";
+            buttonAdd.UseVisualStyleBackColor = false;
+            buttonAdd.Click += buttonAdd_Click;
+            // 
             // EditForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1020, 315);
+            ClientSize = new Size(1060, 315);
+            Controls.Add(buttonAdd);
             Controls.Add(buttonCancel);
             Controls.Add(buttonSave);
             Controls.Add(numericUpDownCost);
@@ -214,5 +229,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDownCost;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;
+        private Button buttonAdd;
     }
 }

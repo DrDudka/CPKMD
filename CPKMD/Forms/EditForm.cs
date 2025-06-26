@@ -13,7 +13,8 @@ namespace CPKMD.Forms
         public EditForm(CPKMEDContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
-            InitializeComponent();
+            InitializeComponent(); 
+            LoadComboBoxes();
         }
 
         public void LoadProgram(EducationalProgram program)
@@ -29,7 +30,6 @@ namespace CPKMD.Forms
 
         private void ProgramForm_Load(object sender, EventArgs e)
         {
-            LoadComboBoxes();
             if (_program == null)
             {
                 _program = new EducationalProgram();
@@ -108,6 +108,11 @@ namespace CPKMD.Forms
         {
             this.Close();
         }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            AddForm form = new();
+            form.ShowDialog();
+        }
     }
 }
-
