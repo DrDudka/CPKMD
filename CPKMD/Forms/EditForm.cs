@@ -54,6 +54,33 @@ namespace CPKMD.Forms
             comboBoxTrainingForm.ValueMember = "Id";
         }
 
+        public void RefreshProgramNames(string newProgramName = null)
+        {
+            var currentValue = comboBoxProgramName.SelectedValue;
+
+            var dataSource = _context.ProgramNames
+                .Select(pn => new { pn.Id, pn.Name })
+                .OrderBy(pn => pn.Name)
+                .ToList();
+
+            comboBoxProgramName.DataSource = dataSource;
+            comboBoxProgramName.DisplayMember = "Name";
+            comboBoxProgramName.ValueMember = "Id";
+
+            if (newProgramName != null)
+            {
+                var newItem = dataSource.FirstOrDefault(x => x.Name == newProgramName);
+                if (newItem != null)
+                {
+                    comboBoxProgramName.SelectedValue = newItem.Id;
+                }
+            }
+            else if (currentValue != null)
+            {
+                comboBoxProgramName.SelectedValue = currentValue;
+            }
+        }
+
         private void buttonSave_Click(object sender, EventArgs e)
         {
             if (!int.TryParse(textBoxProgramNumber.Text, out int programNumber) || programNumber <= 0)
@@ -111,7 +138,13 @@ namespace CPKMD.Forms
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            AddForm form = new();
+            AddForm form = new AddForm();
+            form.ProgramNameAdded += (newName) =>
+            {
+                this.Invoke((MethodInvoker)delegate {
+                    RefreshProgramNames(newName);
+                });
+            };
             form.ShowDialog();
         }
     }

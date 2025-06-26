@@ -4,6 +4,7 @@ namespace CPKMD.Forms
 {
     public partial class AddForm : Form
     {
+        public event Action<string> ProgramNameAdded;   
         private readonly string connectionString = "Host=localhost;Database=CPKMED;Username=postgres;Password=123;Port=5433";
 
         public AddForm()
@@ -32,12 +33,14 @@ namespace CPKMD.Forms
                 {
                     command.ExecuteNonQuery();
                     MessageBox.Show("Данные успешно сохранены!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    ProgramNameAdded?.Invoke(textBoxProgramName.Text);
+
                     ClearForm();
                 }
                 else
                 {
                     MessageBox.Show("Заполните данные!", "Ошибка при добавлении", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                 }
             }
             catch (Exception)
